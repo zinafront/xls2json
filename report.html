@@ -52,19 +52,26 @@
 
 	oReq.send();
 	
-	for (i=0; i<1; i++){
-	    $('.row1').each(function(){
+	for (i=0; i<3; i++){
+		divIndex = 0
+	    while(divIndex<12) {
+	    	$('span:eq('+divIndex+')').each(function(){
 			$(this).html(myData[i].Team);
-		});
-		$('.row2').each(function(){
-			$(this).html(myData[i].Projects);
-		});
-		$('.row3').each(function(){
-			$(this).html(myData[i].Done);
-		});
-		$('.row4').each(function(){
-			$(this).html(myData[i].Estimated);
-		});
+				divIndex++;
+			});
+		    $('span:eq('+divIndex+')').each(function(){
+				$(this).html(myData[i].Projects);
+				divIndex++;
+			});
+		    $('span:eq('+divIndex+')').each(function(){
+				$(this).html(myData[i].Done);
+				divIndex++;
+			});
+		    $('span:eq('+divIndex+')').each(function(){
+				$(this).html(myData[i].Estimated + "<br>");
+				divIndex++;
+			});
+	    }
 	}
 </script>
 </html>
