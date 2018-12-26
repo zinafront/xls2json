@@ -39,7 +39,8 @@
 	}
 
 	oReq.send();
-	var report = myData.length;
+	var report;
+	setTimeout(function(){ report=myData.length; }, 3000);
 	console.log(report);
 	// slots = report *4;
 	// for (n=0; n<slots; n++){
