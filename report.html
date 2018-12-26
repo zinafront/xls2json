@@ -39,17 +39,21 @@
 	}
 
 	oReq.send();
-	divIndex = 0;
-	for (i=0; i<3; i++){
-		$('body').html('<span class="row"'+(i+1)+'></span>')
-    	$('span:eq('+divIndex+')').html(myData[i].Team);
-			divIndex++;
-	    $('span:eq('+divIndex+')').html(myData[i].Projects);
-			divIndex++;
-	    $('span:eq('+divIndex+')').html(myData[i].Done);
-			divIndex++;
-	    $('span:eq('+divIndex+')').html(myData[i].Estimated + "<br>");
-			divIndex++;
+	for (n=0; n<80; n++){
+		$('body').append('<span class="row-'+j+'"></span>');
 	}
+	// divIndex = 0;
+	// for (i=0; i<3; i++){
+	// 	j=i+1;
+	// 	$('body').prepend('<span class="row-'+j+'"></span>')
+ //    	$('span:eq('+divIndex+')').html(myData[i].Team);
+	// 		divIndex++;
+	//     $('span:eq('+divIndex+')').html(myData[i].Projects);
+	// 		divIndex++;
+	//     $('span:eq('+divIndex+')').html(myData[i].Done);
+	// 		divIndex++;
+	//     $('span:eq('+divIndex+')').html(myData[i].Estimated + "<br>");
+	// 		divIndex++;
+	// }
 </script>
 </html>
