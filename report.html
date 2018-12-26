@@ -5,7 +5,23 @@
 	<title>Document</title>
 </head>
 <body>
+	<span class="data1" style="font-weight:bold"></span>
+	<span class="data2"></span>
+	<span class="data3"></span>
+	<span class="data4"></span>
+	<span class="data5" style="font-weight:bold"></span>
+	<span class="data6"></span>
+	<span class="data7"></span>
+	<span class="data8"></span>
+	<span class="data9" style="font-weight:bold"></span>
+	<span class="data10"></span>
+	<span class="data11"></span>
+	<span class="data12"></span>
 <script src="xlsx.full.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script>
 	/* set up XMLHttpRequest */
 	var url = "libro2.xlsx";
@@ -34,5 +50,14 @@
 	}
 
 	oReq.send();
+	for (i=0; i<12; i++) {
+		classguide = i+1;
+		x = $('.data' + classguide);
+		if (classguide%4==0) {
+			x.html(myData[i] + "<br>");
+		} else {
+			x.html(myData[i]);
+		}
+	}
 </script>
 </html>
