@@ -5,18 +5,6 @@
 	<title>Document</title>
 </head>
 <body>
-	<span class="row1" style="font-weight:bold"></span>
-	<span class="row2"></span>
-	<span class="row3"></span>
-	<span class="row4"></span>
-	<span class="row1" style="font-weight:bold"></span>
-	<span class="row2"></span>
-	<span class="row3"></span>
-	<span class="row4"></span>
-	<span class="row1" style="font-weight:bold"></span>
-	<span class="row2"></span>
-	<span class="row3"></span>
-	<span class="row4"></span>
 	
 <script src="xlsx.full.min.js"></script>
 <script
@@ -51,27 +39,17 @@
 	}
 
 	oReq.send();
-	
+	divIndex = 0;
 	for (i=0; i<3; i++){
-		divIndex = 0
-	    while(divIndex<12) {
-	    	$('span:eq('+divIndex+')').each(function(){
-			$(this).html(myData[i].Team);
-				divIndex++;
-			});
-		    $('span:eq('+divIndex+')').each(function(){
-				$(this).html(myData[i].Projects);
-				divIndex++;
-			});
-		    $('span:eq('+divIndex+')').each(function(){
-				$(this).html(myData[i].Done);
-				divIndex++;
-			});
-		    $('span:eq('+divIndex+')').each(function(){
-				$(this).html(myData[i].Estimated + "<br>");
-				divIndex++;
-			});
-	    }
+		$('body').html('<span class="row"'+(i+1)+'></span>')
+    	$('span:eq('+divIndex+')').html(myData[i].Team);
+			divIndex++;
+	    $('span:eq('+divIndex+')').html(myData[i].Projects);
+			divIndex++;
+	    $('span:eq('+divIndex+')').html(myData[i].Done);
+			divIndex++;
+	    $('span:eq('+divIndex+')').html(myData[i].Estimated + "<br>");
+			divIndex++;
 	}
 </script>
 </html>
