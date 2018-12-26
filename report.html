@@ -47,23 +47,23 @@
 	  /* Get worksheet */
 	  var worksheet = workbook.Sheets[first_sheet_name];
 	  myData = XLSX.utils.sheet_to_json(worksheet,{raw:true})
-	  console.log(myData);
+	  return(myData);
 	}
 
 	oReq.send();
 	
 	for (i=0; i<4; i++){
 	    $('.row1').each(function(){
-			myData[i].Team;
+			$(this).html(myData[i].Team);
 		});
 		$('.row2').each(function(){
-			myData[i].Projects;
+			$(this).html(myData[i].Projects);
 		});
 		$('.row3').each(function(){
-			myData[i].Done;
+			$(this).html(myData[i].Done);
 		});
 		$('.row4').each(function(){
-			myData[i].Estimated;
+			$(this).html(myData[i].Estimated);
 		});
 	}
 </script>
